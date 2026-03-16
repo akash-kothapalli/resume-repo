@@ -1,0 +1,35 @@
+name: Build Resume PDFs
+
+on:
+  push:
+    paths:
+      - "resumes/*.tex"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+
+      - name: Compile Backend Resume
+        run: pdflatex resumes/backend_resume.tex
+
+      - name: Compile Fullstack Resume
+        run: pdflatex resumes/fullstack_resume.tex
+
+      - name: Compile Software Engineer Resume
+        run: pdflatex resumes/software_engineer_resume.tex
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: resumes
+          path: |
+            *.pdf
