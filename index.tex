@@ -82,3 +82,18 @@ Whenever a new project or experience is added:
 \end{itemize}
 
 \end{document}
+
+\section*{Automatic Resume PDF Generation}
+
+This repository uses GitHub Actions to automatically build PDF resumes.
+
+Workflow:
+
+\begin{itemize}
+\item Update the resume \texttt{.tex} files in the \texttt{resumes/} directory
+\item Commit and push the changes to GitHub
+\item GitHub Actions automatically compiles the resumes
+\item Generated PDF files can be downloaded from the \texttt{Actions} tab
+\end{itemize}
+
+No local LaTeX installation is required for generating PDFs.
