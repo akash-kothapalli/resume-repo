@@ -28,13 +28,30 @@ parsep=0em
 
 \pagenumbering{gobble}
 
+%----------------------------------------------------------
+% REUSABLE HEADING COMMANDS
+%----------------------------------------------------------
+\newcommand{\resumeSubheading}[2]{
+  \vspace{0.14cm}
+  \noindent
+  {\normalsize\textbf{#1}} \hfill {\textit{#2}}\par
+  \vspace{0.05cm}
+}
+
+\newcommand{\projectHeading}[2]{
+  \vspace{0.08cm}
+  \noindent
+  \textbf{#1} \hfill \textit{#2}\par
+  \vspace{0.03cm}
+}
+
 \begin{document}
 
 %----------------------------------------------------------
 % HEADER
 %----------------------------------------------------------
 \begin{center}
-{\LARGE \textbf{AKASH KOTHAPALLI}}\\[2pt]
+{\LARGE \textbf{AKASH KOTHAPALLI}}\\[3pt]
 Eluru, AP \,|\, +91 8688762002 \,|\,
 \href{mailto:akashkothapalli95@gmail.com}{akashkothapalli95@gmail.com} \,|\,
 \href{https://www.linkedin.com/in/akash-techie}{linkedin.com/in/akash-techie}
@@ -48,7 +65,9 @@ Software engineer with hands-on experience building automation systems, backend 
 %----------------------------------------------------------
 \section*{Professional Experience}
 
-\textbf{ISRO URSC — Software Apprentice (Full Stack \& Backend)} \hfill Nov 2024 -- Nov 2025
+\resumeSubheading
+{ISRO URSC — Software Apprentice (Full Stack \& Backend)}
+{Nov 2024 -- Nov 2025}
 
 \begin{itemize}
 \item Built satellite-based Air Pollution Monitoring workflows using \textbf{Python, NumPy, REST APIs}; improved data preprocessing and ingestion reliability for ML deployment.
@@ -57,18 +76,22 @@ Software engineer with hands-on experience building automation systems, backend 
 \item Built an R\&D Outsourcing Portal consolidating workflow documentation for \textbf{20+ satellite subsystem} projects.
 \end{itemize}
 
-\textbf{Sumeru Software Solutions — Software Development Intern} \hfill Feb 2024 -- Nov 2024
+\resumeSubheading
+{Sumeru Software Solutions — Software Development Intern}
+{Feb 2024 -- Nov 2024}
 
 \begin{itemize}
 \item Contributed to migration of a global platform serving \textbf{180+ countries} from monolithic architecture to service-oriented microservices using \textbf{Node.js} and \textbf{PostgreSQL}.
 \item Designed modular \textbf{REST APIs} enabling secure and fault-tolerant access across legacy and microservice layers.
-\item Implemented PostgreSQL triggers, stored functions, and RBAC improving data consistency and system security.
+\item Implemented PostgreSQL triggers, stored functions, and RBAC controls to improve data consistency, authorization, and system security.
 \end{itemize}
 
 %----------------------------------------------------------
 \section*{Projects}
 
-\textbf{Edge Task Manager — Serverless Task Platform (Cloudflare Workers + TypeScript)}
+\projectHeading
+{Edge Task Manager}
+{Cloudflare Workers + TypeScript}
 
 \begin{itemize}
 \item Built a scalable task management platform supporting task CRUD operations, tagging, and pagination using \textbf{Cloudflare Workers} and \textbf{TypeScript}.
@@ -102,7 +125,7 @@ Sir C.R. Reddy College of Engineering (JNTUK, Eluru) \hfill CGPA: \textbf{7.09/1
 
 \begin{itemize}
 \item Bharatiya Antariksh Hackathon 2025 — ISRO
-\item Remote Sensing, GIS \& GNSS — IIRS–ISRO
+\item Remote Sensing, GIS \& GNSS — IIRS--ISRO
 \item Google Cloud \& Agentic AI — Google
 \end{itemize}
 
