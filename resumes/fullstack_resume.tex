@@ -4,137 +4,102 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{palatino}
+\usepackage{tikz}
 \usepackage[hidelinks]{hyperref}
 \usepackage{setspace}
 
-\setstretch{1.04}
+\hypersetup{
+  pdftitle={Akash\_Fullstack\_Developer},
+  pdfauthor={Akash Kothapalli}
+}
 
-%----------------------------------------------------------
-% COLORS & FORMATTING
-%----------------------------------------------------------
+\setstretch{1.04}
 \definecolor{myblue}{HTML}{003366}
 
-\titleformat{\section}
-{\large\bfseries\color{myblue}}{}{0em}{}[\titlerule]
-
+\titleformat{\section}{\large\bfseries\color{myblue}}{}{0em}{}[\titlerule]
 \titlespacing*{\section}{0pt}{4pt}{3pt}
 
-\setlist[itemize]{
-leftmargin=1.25em,
-itemsep=0.2em,
-topsep=0.15em,
-parsep=0em
-}
-
+\setlist[itemize]{leftmargin=1.25em,itemsep=0.2em,topsep=0.15em,parsep=0em}
 \pagenumbering{gobble}
 
-%----------------------------------------------------------
-% REUSABLE HEADING COMMANDS
-%----------------------------------------------------------
-\newcommand{\resumeSubheading}[2]{
-  \vspace{0.14cm}
-  \noindent
-  {\normalsize\textbf{#1}} \hfill {\textit{#2}}\par
-  \vspace{0.05cm}
+\newcommand{\iconbadge}[1]{%
+  \tikz[baseline=-0.55ex]{\node[circle,fill=myblue,text=white,font=\bfseries\fontsize{5}{5}\selectfont,inner sep=1.3pt,minimum size=10pt]{#1};}%
 }
 
+\newcommand{\resumeSubheading}[2]{
+  \vspace{0.14cm}\noindent{\normalsize\textbf{#1}} \hfill {\textit{#2}}\par\vspace{0.05cm}
+}
 \newcommand{\projectHeading}[2]{
-  \vspace{0.08cm}
-  \noindent
-  \textbf{#1} \hfill \textit{#2}\par
-  \vspace{0.03cm}
+  \vspace{0.08cm}\noindent\textbf{#1} \hfill \textit{#2}\par\vspace{0.03cm}
 }
 
 \begin{document}
 
-%----------------------------------------------------------
-% HEADER
-%----------------------------------------------------------
 \begin{center}
-{\LARGE \textbf{AKASH KOTHAPALLI}}\\[3pt]
-Bengaluru, Karnataka \,|\, +91 8688762002 \,|\,
-\href{mailto:akashkothapalli95@gmail.com}{akashkothapalli95@gmail.com} \,|\,
-\href{https://www.linkedin.com/in/akash-techie}{linkedin.com/in/akash-techie}
+  {\LARGE \textbf{AKASH KOTHAPALLI}}\\[5pt]
+  {\small
+    \iconbadge{@}~\href{mailto:akashkothapalli95@gmail.com}{akashkothapalli95@gmail.com}
+    \enspace\textcolor{myblue}{|}\enspace
+    +91\,8688762002
+    \enspace\textcolor{myblue}{|}\enspace
+    \iconbadge{in}~\href{https://www.linkedin.com/in/akash-techie}{linkedin.com/in/akash-techie}
+    \enspace\textcolor{myblue}{|}\enspace
+    \iconbadge{gh}~\href{https://github.com/akash-kothapalli}{github.com/akash-kothapalli}
+    \enspace\textcolor{myblue}{|}\enspace
+    \iconbadge{lc}~\href{https://leetcode.com/u/Akashgeek}{leetcode.com/u/Akashgeek}
+  }
 \end{center}
 
-%----------------------------------------------------------
 \section*{Profile}
+Full-stack software developer with 1+ year of professional experience building end-to-end web applications, REST APIs, and workflow automation systems at ISRO URSC. Delivered production platforms serving 2,000+ users with measurable reductions in operational workload. Skilled across the full stack --- React.js frontends, Python/Node.js backends, and PostgreSQL/MongoDB databases. Seeking a full-stack engineering role to build impactful, user-facing products at a product-driven company or startup.
 
-Full-stack software developer with experience building end-to-end web applications including frontend interfaces, backend APIs, and database systems. During apprenticeship at ISRO URSC, contributed to workflow automation platforms and operational systems used for large-scale program coordination. Interested in developing scalable web applications and contributing to product-focused engineering teams.
+\section*{Technical Skills}
+\begin{itemize}
+\item \textbf{Frontend:} React.js, JavaScript, TypeScript, HTML5, CSS3, Responsive UI Design
+\item \textbf{Backend:} Python, Flask, Node.js, Cloudflare Workers, REST API Design, JWT Authentication, Microservices
+\item \textbf{Databases:} PostgreSQL, MySQL, MongoDB, Cloudflare D1, KV Caching
+\item \textbf{Cloud \& Tools:} Google Cloud, Cloudflare Workers AI, Git, Linux, Postman, VS Code
+\item \textbf{Core CS:} Data Structures \& Algorithms, OOP, DBMS, Operating Systems, System Design
+\end{itemize}
 
-%----------------------------------------------------------
 \section*{Professional Experience}
 
-\resumeSubheading
-{ISRO URSC — Software Apprentice (Full Stack \& Backend)}
-{Nov 2024 -- Nov 2025}
-
+\resumeSubheading{ISRO URSC \textemdash{} Software Developer (Full Stack \& Backend)}{Nov 2024 -- Nov 2025}
 \begin{itemize}
-\item Built satellite-based Air Pollution Monitoring workflows using \textbf{Python, NumPy, REST APIs}; improved data preprocessing and ingestion reliability for ML deployment.
-\item Developed \textbf{Python + PostgreSQL} automation systems digitizing HR/Admin workflows, reducing manual data entry by \textbf{70\%} and increasing operational efficiency by \textbf{90\%}.
-\item Delivered Trainee, VVIP Visit \& Internship Allocation Systems using \textbf{Flask, REST APIs, SQL}; scaled to \textbf{2,000+ trainees}, \textbf{500+ visits}, and \textbf{4,000+ screenings}, reducing coordination workload by \textbf{80\%}.
-\item Built an R\&D Outsourcing Portal consolidating workflow documentation for \textbf{20+ satellite subsystem} projects.
+\item Designed and delivered Trainee, VVIP Visit \& Internship Allocation Systems using \textbf{Flask, React.js, REST APIs, SQL}; scaled to \textbf{2,000+ trainees}, \textbf{500+ visits}, and \textbf{4,000+ screenings}, reducing coordination workload by \textbf{80\%}.
+\item Developed \textbf{Python + PostgreSQL} automation systems digitizing HR/Admin workflows, cutting manual data entry by \textbf{70\%} and increasing operational efficiency by \textbf{90\%}.
+\item Built satellite Air Pollution Monitoring data pipelines using \textbf{Python, NumPy, REST APIs}; improved ingestion reliability for downstream ML model deployment.
+\item Developed an R\&D Outsourcing Portal with document management features consolidating workflows across \textbf{20+ satellite subsystem} projects.
 \end{itemize}
 
-\resumeSubheading
-{Sumeru Software Solutions — Software Development Intern}
-{Feb 2024 -- Nov 2024}
-
+\resumeSubheading{Sumeru Software Solutions \textemdash{} Software Development Intern}{Feb 2024 -- Nov 2024}
 \begin{itemize}
-\item Contributed to migration of a global platform serving \textbf{180+ countries} from monolithic architecture to service-oriented microservices using \textbf{Node.js} and \textbf{PostgreSQL}.
-\item Designed modular \textbf{REST APIs} enabling secure and fault-tolerant access across legacy and microservice layers.
-\item Implemented PostgreSQL triggers, stored functions, and RBAC controls to improve data consistency, authorization, and system security.
+\item Contributed to migration of a global SaaS platform serving \textbf{180+ countries} from monolithic to microservices architecture using \textbf{Node.js} and \textbf{PostgreSQL}.
+\item Designed modular \textbf{REST APIs} enabling secure, fault-tolerant data access across legacy and microservice layers.
+\item Implemented \textbf{PostgreSQL} triggers, stored functions, and \textbf{RBAC} controls, strengthening data consistency and authorization across service boundaries.
 \end{itemize}
 
-%----------------------------------------------------------
 \section*{Projects}
 
-\projectHeading
-{Edge Task Manager}
-{Cloudflare Workers + TypeScript}
-
+\projectHeading{Edge Task Manager \textemdash{} Full Stack Serverless Application}{React.js $\cdot$ TypeScript $\cdot$ Cloudflare Workers $\cdot$ JWT $\cdot$ Workers AI}
 \begin{itemize}
-\item Built a full-stack task management application with responsive UI and backend APIs supporting task CRUD operations, tagging, and pagination using Cloudflare Workers and TypeScript.
-\item Designed secure REST APIs with \textbf{JWT authentication} and integrated \textbf{Cloudflare D1} database with KV caching for improved performance.
-\item Implemented asynchronous AI-based task summarization using \textbf{Workers AI (Llama-3)} without blocking API responses.
-\item \textbf{Live Application:} \url{https://cloudflare-task-manager.taskflow-akash.workers.dev}
-\item \textbf{GitHub Repository:} \url{https://github.com/akash-kothapalli/cloudflare-task-manager}
+\item Built a full-stack task management application with a responsive \textbf{React.js} frontend and \textbf{Cloudflare Workers} serverless backend, supporting CRUD, tagging, filtering, and pagination.
+\item Implemented \textbf{JWT authentication}, \textbf{Cloudflare D1} relational database, and \textbf{KV caching} for fast, secure data access.
+\item Integrated non-blocking async AI task summarization via \textbf{Workers AI (Llama-3)}, maintaining API response times under 100ms.
+\item \iconbadge{gh}~\href{https://github.com/akash-kothapalli/cloudflare-task-manager}{github.com/akash-kothapalli/cloudflare-task-manager}
+  \enspace\textcolor{myblue}{|}\enspace
+  \textbf{Live:}~\href{https://cloudflare-task-manager.taskflow-akash.workers.dev}{taskflow-akash.workers.dev}
 \end{itemize}
 
-%----------------------------------------------------------
 \section*{Education}
-
-\textbf{B.Tech in Computer Science and Engineering} \hfill 2019--2023
-
+\textbf{B.Tech in Computer Science and Engineering} \hfill 2019--2023\\
 Sir C.R. Reddy College of Engineering (JNTUK, Eluru) \hfill CGPA: \textbf{7.09/10}
 
-%----------------------------------------------------------
-\section*{Technical Skills}
-
-\begin{itemize}
-\item \textbf{Frontend:} React.js, JavaScript, TypeScript, HTML5, CSS3, Responsive UI, REST API Integration
-\item \textbf{Backend:} Node.js, Cloudflare Workers, PHP, REST API Design, JWT Authentication
-\item \textbf{Databases:} PostgreSQL, MySQL, MongoDB, Cloudflare D1
-\item \textbf{Languages:} JavaScript, TypeScript, Python, SQL
-\item \textbf{Core CS:} Data Structures \& Algorithms, OOP, DBMS, Operating Systems
-\item \textbf{Tools:} Git, Linux, Postman, VS Code
-\end{itemize}
-
-%----------------------------------------------------------
 \section*{Certifications}
-
 \begin{itemize}
-\item Bharatiya Antariksh Hackathon 2025 — ISRO
-\item Remote Sensing, GIS \& GNSS — IIRS--ISRO
-\item Google Cloud \& Agentic AI — Google
-\end{itemize}
-
-%----------------------------------------------------------
-\section*{Leadership \& Activities}
-
-\begin{itemize}
-\item Apprentice Member, ISRO — trainee coordination, documentation, subsystem workflow support
-\item Full-Time Volunteer — Art of Living International Center
+\item \textbf{Bharatiya Antariksh Hackathon 2025} \textemdash{} ISRO \textit{(National-level space tech competition)}
+\item \textbf{Remote Sensing, GIS \& GNSS} \textemdash{} IIRS--ISRO
+\item \textbf{Google Cloud \& Agentic AI} \textemdash{} Google
 \end{itemize}
 
 \end{document}

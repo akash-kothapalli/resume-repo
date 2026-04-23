@@ -1,99 +1,103 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[a4paper,margin=1in]{geometry}
+\usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tikz}
 
-\title{Akash Kothapalli -- Resume Usage Guide}
+\definecolor{myblue}{HTML}{003366}
+\hypersetup{colorlinks=true, linkcolor=myblue, urlcolor=myblue}
+
+\titleformat{\section}{\large\bfseries\color{myblue}}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+
+\newcommand{\iconbadge}[1]{%
+  \tikz[baseline=-0.55ex]{\node[circle,fill=myblue,text=white,font=\bfseries\fontsize{5}{5}\selectfont,inner sep=1.3pt,minimum size=10pt]{#1};}%
+}
+
+\title{\textbf{Akash Kothapalli --- Resume Repository Guide}}
 \date{}
+\author{}
 
 \begin{document}
-
 \maketitle
 
-This document describes how to use and maintain the different resume versions.
+\section*{Quick Reference}
+
+\begin{tabular}{lll}
+\textbf{File} & \textbf{Output PDF} & \textbf{Target Roles} \\
+\hline
+\texttt{backend\_resume.tex} & \texttt{Akash\_Backend\_Developer.pdf} & Backend, Python, API Developer \\
+\texttt{fullstack\_resume.tex} & \texttt{Akash\_Fullstack\_Developer.pdf} & Full Stack, Web Developer, Startup SDE \\
+\texttt{software\_engineer\_resume.tex} & \texttt{Akash\_Software\_Engineer.pdf} & General SDE, Product companies \\
+\end{tabular}
+
+\section*{Header Links (all resumes)}
+
+All three resumes use the following profile links in the header:
+
+\begin{itemize}
+\item \iconbadge{@}~Email: \href{mailto:akashkothapalli95@gmail.com}{akashkothapalli95@gmail.com}
+\item \iconbadge{in}~LinkedIn: \href{https://www.linkedin.com/in/akash-techie}{linkedin.com/in/akash-techie}
+\item \iconbadge{gh}~GitHub: \href{https://github.com/akash-kothapalli}{github.com/akash-kothapalli}
+\item \iconbadge{lc}~LeetCode: \href{https://leetcode.com/u/Akashgeek}{leetcode.com/u/Akashgeek}
+\end{itemize}
+
+To update any profile link, search for the URL across all three \texttt{.tex} files and replace in one go.
 
 \section*{Resume Versions}
 
 \begin{itemize}
-\item \textbf{Backend Resume}
-Used when applying for backend engineering roles.
 
-Typical roles:
-\begin{itemize}
-\item Backend Developer
-\item API Developer
-\item Node.js Developer
-\item Platform Engineer
-\item Startup backend roles
-\end{itemize}
+\item \textbf{Backend Resume} (\texttt{backend\_resume.tex})
 
-\item \textbf{Full Stack Resume}
-Used when applying for full-stack development roles.
+Emphasises Python automation, PostgreSQL, Flask, REST APIs, and serverless backend work.
+Apply for: Backend Developer, Python Developer, API Developer, Node.js Developer, Platform Engineer.
 
-Typical roles:
-\begin{itemize}
-\item Full Stack Developer
-\item Web Developer
-\item React + Node roles
-\item Product engineering roles
-\end{itemize}
+\item \textbf{Full Stack Resume} (\texttt{fullstack\_resume.tex})
 
-\item \textbf{Software Engineer Resume}
-Used when applying to large technology companies.
+Leads with React.js frontend skills, then backend and databases.
+Apply for: Full Stack Developer, Web Developer, React + Node roles, Product engineering at startups.
 
-Examples:
-\begin{itemize}
-\item Amazon
-\item Google
-\item Microsoft
-\item Adobe
-\item Salesforce
-\end{itemize}
+\item \textbf{Software Engineer Resume} (\texttt{software\_engineer\_resume.tex})
+
+Balanced profile emphasising system design, distributed systems, and DSA preparation.
+Apply for: SDE-1 at product companies, associate engineer roles, companies running GATE/aptitude-based screening.
 
 \end{itemize}
 
-\section*{Customization Rules}
+\section*{PDF Generation (GitHub Actions)}
 
-Only the following sections should change between resumes:
+PDFs are built automatically on every push to \texttt{resumes/*.tex}.
+
+\begin{enumerate}
+\item Edit any \texttt{.tex} file in the \texttt{resumes/} directory.
+\item Commit and push to \texttt{main}.
+\item GitHub Actions compiles all three resumes via \texttt{pdflatex}.
+\item Download named PDFs from the \textbf{Actions} tab $\rightarrow$ latest workflow run $\rightarrow$ \textbf{Artifacts}.
+\end{enumerate}
+
+Output filenames: \texttt{Akash\_Backend\_Developer.pdf}, \texttt{Akash\_Fullstack\_Developer.pdf}, \texttt{Akash\_Software\_Engineer.pdf}.
+
+\section*{What Only Changes Between Resumes}
 
 \begin{itemize}
-\item Profile section
-\item Technical Skills order
-\item Project descriptions
+\item \texttt{pdftitle} in \texttt{\textbackslash hypersetup} (PDF filename metadata)
+\item Profile summary paragraph
+\item Skills section ordering (lead with strongest skills for that role)
+\item Project description emphasis (backend API vs full-stack app vs distributed system)
 \end{itemize}
 
-All other sections remain the same.
+Everything else --- experience bullets, education, certifications, header --- is identical.
 
-\section*{Application Strategy}
-
-\begin{itemize}
-\item Backend resume for startups and backend-heavy roles
-\item Full-stack resume for product companies and web roles
-\item Software engineer resume for big tech companies
-\end{itemize}
-
-\section*{Maintenance}
-
-Whenever a new project or experience is added:
+\section*{Maintenance Rules}
 
 \begin{itemize}
-\item Update the base resume
-\item Propagate the changes to all three versions
+\item When adding a new project: update all three \texttt{.tex} files, adjusting the project description framing per resume type.
+\item When adding new experience: add to all three, keeping bullet point language consistent with each resume's focus.
+\item Never use tables, images, or multi-column layouts --- ATS systems strip them.
+\item Keep each resume to exactly one page.
 \end{itemize}
 
 \end{document}
-
-\section*{Automatic Resume PDF Generation}
-
-This repository uses GitHub Actions to automatically build PDF resumes.
-
-Workflow:
-
-\begin{itemize}
-\item Update the resume \texttt{.tex} files in the \texttt{resumes/} directory
-\item Commit and push the changes to GitHub
-\item GitHub Actions automatically compiles the resumes
-\item Generated PDF files can be downloaded from the \texttt{Actions} tab
-\end{itemize}
-
-No local LaTeX installation is required for generating PDFs.
